@@ -1,11 +1,6 @@
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
-
 #[tauri::command] 
-fn return_string(word: &str) -> String{
+fn translate(word: &str) -> String{
     return format!("{}, translated", word);
 }
 
@@ -13,7 +8,7 @@ fn return_string(word: &str) -> String{
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
-        .invoke_handler(tauri::generate_handler![greet, return_string])
+        .invoke_handler(tauri::generate_handler![translate])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

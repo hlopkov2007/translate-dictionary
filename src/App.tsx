@@ -8,7 +8,7 @@ function App() {
 
   async function translate() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    setTranslatedWords(await invoke("return_string", { word: words() }));
+    setTranslatedWords(await invoke("translate", { word: words() }));
   }
 
   return (
