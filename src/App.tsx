@@ -11,12 +11,6 @@ function App() {
     setTranslatedWords(await invoke("translate_from_en_to_ru", { word: words() }));
   }
 
-
-
-  
-  
-
-
   return (
     <div class="container">
 
